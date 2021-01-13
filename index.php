@@ -35,9 +35,6 @@ if(is_login()){
             <input type="password" name="user_password" class="form-control" id="inputPassword" placeholder="패스워드를 입력하세요."
                    required  autocomplete="off" readonly onfocus="this.removeAttribute('readonly');" />
         </div>
-        <div class="checkbox">
-            <label><input type="checkbox"> 아이디 기억</label>
-        </div>
         </br>
         <div class="from-group" style="padding: 10px 10px 10px 10px;" >
             <button type="submit" name="login" class="btn btn-success">로그인</button>
