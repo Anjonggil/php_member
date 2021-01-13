@@ -19,8 +19,8 @@ if( ($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['submit']))
 
     foreach ($_POST as $key => $val)
     {
-        if(preg_match('#^__autocomplete_fix_#', $key) === 1){
-            $n = substr($key, 19);
+        if(preg_match('#^an#', $key) === 1){
+            $n = substr($key, 2);
             if(isset($_POST[$n])) {
                 $_POST[$val] = $_POST[$n];
             }
@@ -32,9 +32,6 @@ if( ($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['submit']))
     $confirmpassword=$_POST['newconfirmpassword'];
     $userprofile=$_POST['newuserprofile'];
 
-//   if (!validatePassword($password)){
-//		$errMSG = "잘못된 패스워드";
-//      }
 
     if ($_POST['newpassword'] != $_POST['newconfirmpassword']) {
         $errMSG = "패스워드가 일치하지 않습니다.";
@@ -122,7 +119,7 @@ include('head.php');
                 <td><label class="control-label">아이디</label></td>
                 <td><input class="form-control" type="text" name="<? echo $r1; ?>" placeholder="아이디를 입력하세요." autocomplete="off" readonly
                            onfocus="this.removeAttribute('readonly');" />
-                    <input type="hidden" name="__autocomplete_fix_<? echo $r1; ?>" value="newusername" />
+                    <input type="hidden" name="an<? echo $r1; ?>" value="newusername" />
 
                 </td>
             </tr>
@@ -132,7 +129,7 @@ include('head.php');
                 <td>
                     <input class="form-control" type="password" name="<? echo $r2; ?>"  placeholder="패스워드를 입력하세요" autocomplete="off" readonly
                            onfocus="this.removeAttribute('readonly');" />
-                    <input type="hidden" name="__autocomplete_fix_<? echo $r2; ?>" value="newpassword" />
+                    <input type="hidden" name="an<? echo $r2; ?>" value="newpassword" />
                 </td>
             </tr>
             <tr>
@@ -141,7 +138,7 @@ include('head.php');
                 <td>
                     <input class="form-control" type="password" name="<? echo $r3; ?>"  placeholder="패스워드를 다시 한번 입력하세요" autocomplete="off" readonly
                            onfocus="this.removeAttribute('readonly');" />
-                    <input type="hidden" name="__autocomplete_fix_<? echo $r3; ?>" value="newconfirmpassword" />
+                    <input type="hidden" name="an<? echo $r3; ?>" value="newconfirmpassword" />
                 </td>
             </tr>
 
@@ -150,7 +147,7 @@ include('head.php');
                 <td><label class="control-label">프로필</label></td>
                 <td><input class="form-control" type="text" name="<? echo $r4; ?>" placeholder="프로필을 입력하세요" autocomplete="off" readonly
                            onfocus="this.removeAttribute('readonly');" />
-                    <input type="hidden" name="__autocomplete_fix_<? echo $r4; ?>" value="newuserprofile" />
+                    <input type="hidden" name="an<? echo $r4; ?>" value="newuserprofile" />
                 </td>
             </tr>
             <tr>

@@ -31,8 +31,8 @@ if( ($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['btn_save_updates']))
 {
     foreach ($_POST as $key => $val)
     {
-        if(preg_match('#^__autocomplete_fix_#', $key) === 1){
-            $n = substr($key, 19);
+        if(preg_match('#^an#', $key) === 1){
+            $n = substr($key, 2);
             if(isset($_POST[$n])) {
                 $_POST[$val] = $_POST[$n];
             }
@@ -108,7 +108,7 @@ if( ($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['btn_save_updates']))
                 <td>
                     <input id="pw" class="form-control" type="password" name="<? echo $r2; ?>" value="<?php echo $password; ?>" placeholder="패스워드를 입력하세요."
                            autocomplete="off" readonly onfocus="this.removeAttribute('readonly');" required />
-                    <input type="hidden" name="__autocomplete_fix_<? echo $r2; ?>" value="editpassword" />
+                    <input type="hidden" name="an<? echo $r2; ?>" value="editpassword" />
                 </td>
             </tr>
             <tr>
@@ -117,7 +117,7 @@ if( ($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['btn_save_updates']))
                 <td>
                     <input class="form-control" type="text" name="<? echo $r3; ?>" value="<?php echo $userprofile; ?>" placeholder="프로필을 입력하세요."
                            autocomplete="off" readonly onfocus="this.removeAttribute('readonly');" required />
-                    <input type="hidden" name="__autocomplete_fix_<? echo $r3; ?>" value="edituserprofile" />
+                    <input type="hidden" name="an<? echo $r3; ?>" value="edituserprofile" />
                 </td>
             </tr>
 
