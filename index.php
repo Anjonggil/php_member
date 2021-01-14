@@ -76,12 +76,12 @@ if ( ($_SERVER['REQUEST_METHOD'] == 'POST') and isset($_POST['login']) )
             die("Database error. " . $e->getMessage());
         }
 
-        $row = $stmt->fetch();
+        $row = $stmt->fetch();//해당 되는 테이블 정보를 배열로 가져오기
         $password = $row['password'];
 
 
         if ( $userpassword == $password) {
-            $login_ok = true;
+            $login_ok = true; //데이터베이스에서 가져온 password가 userpassword와 일치할 경우
         }
     }
 
